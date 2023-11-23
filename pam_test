@@ -1,0 +1,7 @@
+#Cambiar la ruta a tu gusto
+session	required	pam_python.so /root/modulos.py/modulo.py
+auth	requisite	pam_python.so /root/modulos.py/modulo.py
+#auth	required	pam_python.so /root/modulos.py/modulo2.py
+auth	[success=done default=reset]	pam_python.so /root/modulos.py/modulo2.py
+auth	[success=ok  default=die]	pam_python.so /root/modulos.py/modulo3.py
+account required	pam_python.so /root/modulos.py/modulo.py
