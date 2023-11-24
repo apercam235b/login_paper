@@ -2,7 +2,7 @@ import subprocess
 
 def pam_sm_authenticate(pamh, flags, argv):
         juego = str(input('Ingresa piedra, papel o tijera: '))
-        result = subprocess.run(["python3", "/root/juego.py",juego], check=False,stdout=subprocess.PIPE, stderr=subproces>
+        result = subprocess.run(["python3", "/root/juego.py",juego], check=False,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         variable_juego = result.returncode
         print(variable_juego)
         if (variable_juego == 1):
@@ -25,4 +25,5 @@ def pam_sm_close_session(pamh, flags, argv):
 
 def pam_sm_chauthtok(pamh, flags, argv):
     return pamh.PAM_SUCCESS
+
 
